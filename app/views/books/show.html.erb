@@ -1,2 +1,10 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'form',book: @books %>
+
+<h1>投稿詳細</h1>
+<h4>タイトル</h4>
+<%= @book.title %>
+<h4>感想</h4>
+<%= @book.body %><br>
+<%= link_to "編集",edit_book_path(@book.id) %>
+<%= link_to "削除",book_path(@book),method: :delete,"data-confirm"=>"本当に削除しますか？" %>
+
